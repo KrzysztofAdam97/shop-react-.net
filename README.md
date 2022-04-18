@@ -16,7 +16,7 @@ Node version 16.14.0
 ## GETTING STARTED
 
 1. `yarn install`
-2. `yarn dev`
+2. `yarn start`
 
 ## STAGING
 
