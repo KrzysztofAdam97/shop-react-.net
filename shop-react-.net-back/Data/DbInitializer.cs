@@ -1,17 +1,40 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using shop_react_.net_back.Entities;
 
 namespace shop_react_.net_back.Data
 {
     public static class DbInitializer
     {
-        public static void Initialize(ShopContext context)
+        public static async Task Initialize(ShopContext context, UserManager<User> userManager)
         {
+            if (!userManager.Users.Any())
+            {
+                var user = new User
+                {
+                    UserName = "norek",
+                    Email = "norek@gmail.com"
+                };
+
+                await userManager.CreateAsync(user, "Haslo#1234");
+                await userManager.AddToRoleAsync(user, "Customer");
+
+                var admin = new User
+                {
+                    UserName = "norekadmin",
+                    Email = "norekadmin@gmail.com"
+                };
+
+                await userManager.CreateAsync(admin, "Haslo#1234");
+                await userManager.AddToRolesAsync(admin, new[] {"Customer", "Admin"});
+            }
+
             if (context.Products.Any())
             {
-                return;
+                return;   //
             }
 
             var products = new List<Product>
