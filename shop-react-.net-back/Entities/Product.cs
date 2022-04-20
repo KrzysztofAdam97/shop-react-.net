@@ -12,6 +12,6 @@ namespace shop_react_.net_back.Entities
         public string Type { get; set; } // nowe/uzywane/open_box?
         public string Brand { get; set; }
         public string Category { get; set; }
-        public string Stock { get; set; } // stan magazynowy
+        public int InStock { get; set; } // stan magazynowy ilość produktów w magazynie
     }
 }

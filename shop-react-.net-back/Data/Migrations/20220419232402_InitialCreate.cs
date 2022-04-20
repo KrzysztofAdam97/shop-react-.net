@@ -19,7 +19,7 @@ namespace shop_react_.net_back.Data.Migrations
                     Type = table.Column<string>(type: "TEXT", nullable: true),
                     Brand = table.Column<string>(type: "TEXT", nullable: true),
                     Category = table.Column<string>(type: "TEXT", nullable: true),
-                    Stock = table.Column<string>(type: "TEXT", nullable: true)
+                    InStock = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

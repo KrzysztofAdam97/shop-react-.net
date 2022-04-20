@@ -39,8 +39,8 @@ namespace shop_react_.net_back.Data.Migrations
                     b.Property<long>("Price")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Stock")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("InStock")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Type")
                         .HasColumnType("TEXT");
