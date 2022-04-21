@@ -45,11 +45,11 @@ namespace shop_react_.net_back.Controllers
             var user = new User
             {
                 UserName = registerDto.UserName,
-                FirstName = registerDto.FirstName,
-                LastName = registerDto.LastName,
-                DateOfBirth = registerDto.DateOfBirth,
+                FirstName = registerDto.FirstName,      // SPRAWDZENIE CZY JEST TO POTRZEBNE
+                LastName = registerDto.LastName,        // SPRAWDZENIE CZY JEST TO POTRZEBNE
+                DateOfBirth = registerDto.DateOfBirth,  // SPRAWDZENIE CZY JEST TO POTRZEBNE
                 Email = registerDto.Email,
-                PasswordHash = registerDto.Password
+                PasswordHash = registerDto.Password     // SPRAWDZENIE CZY JEST TO POTRZEBNE
             };
 
             var result = await _userManager.CreateAsync(user, registerDto.Password);
@@ -68,7 +68,7 @@ namespace shop_react_.net_back.Controllers
 
             await _userManager.AddToRoleAsync(user, "Customer");
 
-            return StatusCode(201);
+            return StatusCode(201); // ???? 
 
             // return Ok(user);        // zwraca usera, zamiennie z "return user;"
         }
