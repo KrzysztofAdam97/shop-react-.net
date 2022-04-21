@@ -48,7 +48,8 @@ namespace shop_react_.net_back.Controllers
                 FirstName = registerDto.FirstName,
                 LastName = registerDto.LastName,
                 DateOfBirth = registerDto.DateOfBirth,
-                Email = registerDto.Email
+                Email = registerDto.Email,
+                PasswordHash = registerDto.Password
             };
 
             var result = await _userManager.CreateAsync(user, registerDto.Password);
