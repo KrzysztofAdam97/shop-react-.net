@@ -30,11 +30,12 @@ namespace shop_react_.net_back
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Problem migrating data");
+                logger.LogError(ex, "Wystąpił błąd podczas migracji bazy danych");
             }
             // finally
             // {
-            //     scope.Dispose(); // zamiast tego można użyć using
+            //     scope.Dispose(); // zamiast tego można użyć using var scope = host.Services.CreateScope();
+                                    // wtedy nie trzeba tego zamykać wywołując dispose 
             // }
 
              await host.RunAsync();

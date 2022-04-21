@@ -34,7 +34,7 @@ namespace shop_react_.net_back.Data
 
             if (context.Products.Any())
             {
-                return;   //
+                return;   // jeśli istnieją produkty, to zwróć, inaczej wykończ kod poniżej 
             }
 
             var products = new List<Product>
