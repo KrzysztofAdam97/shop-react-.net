@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "Zaloguj się",
+    "link": "/logowanie"
+  },
+  {
+    "id": 2,
+    "name": "Koszyk",
+    "link": "/koszyk"
+  }
+]
