@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace shop_react_.net_back.Controllers
 {
-    public class BuggyController : BaseApiController
+    public class ErrorController : BaseApiController
     {
         [HttpGet("not-found")]
         public ActionResult GetNotFound()
