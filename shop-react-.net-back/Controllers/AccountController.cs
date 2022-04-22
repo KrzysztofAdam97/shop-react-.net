@@ -8,7 +8,7 @@ using shop_react_.net_back.Entities;
 
 namespace shop_react_.net_back.Controllers
 {
-    public class AccountController : ControllerBase // BaseApiController
+    public class AccountController : BaseApiController
     {
         private readonly UserManager<User> _userManager;
         public AccountController(UserManager<User> userManager)
@@ -45,17 +45,17 @@ namespace shop_react_.net_back.Controllers
             var user = new User
             {
                 UserName = registerDto.UserName,
-                FirstName = registerDto.FirstName,      // SPRAWDZENIE CZY JEST TO POTRZEBNE
-                LastName = registerDto.LastName,        // SPRAWDZENIE CZY JEST TO POTRZEBNE
-                DateOfBirth = registerDto.DateOfBirth,  // SPRAWDZENIE CZY JEST TO POTRZEBNE
+                // FirstName = registerDto.FirstName,      // SPRAWDZENIE CZY JEST TO POTRZEBNE
+                // LastName = registerDto.LastName,        // SPRAWDZENIE CZY JEST TO POTRZEBNE
+                // DateOfBirth = registerDto.DateOfBirth,  // SPRAWDZENIE CZY JEST TO POTRZEBNE
                 Email = registerDto.Email,
-                PasswordHash = registerDto.Password     // SPRAWDZENIE CZY JEST TO POTRZEBNE
+                // PasswordHash = registerDto.Password     // SPRAWDZENIE CZY JEST TO POTRZEBNE
             };
 
             var result = await _userManager.CreateAsync(user, registerDto.Password);
             if (!result.Succeeded)
             {
-                foreach (var error in result.Errors)
+                foreach (var error in result.Errors)  // loopujemy aray of errors
                 {
                     ModelState.AddModelError(error.Code, error.Description);
                 }
