@@ -68,9 +68,9 @@ namespace shop_react_.net_back.Controllers
 
             await _userManager.AddToRoleAsync(user, "Customer");
 
-            return StatusCode(201); // ???? 
+            // return StatusCode(201); // ???? 
 
-            // return Ok(user);        // zwraca usera, zamiennie z "return user;"
+            return Ok(user);        // zwraca usera, zamiennie z "return user;"
         }
     }
 }
