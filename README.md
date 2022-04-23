@@ -1,6 +1,6 @@
 # SHOP-REACT/.NET
 
-Online Shop project for SAN: "future production link"
+Online Shop project for SAN: https://dulcet-piroshki-f6fdc1.netlify.app/
 
 ## TECH STACK
 Front:
@@ -20,7 +20,7 @@ Node version 16.14.0
 
 ## STAGING
 
-- front: "future front production site"
+- front: https://dulcet-piroshki-f6fdc1.netlify.app/
 - api: "future api site"
 
 
