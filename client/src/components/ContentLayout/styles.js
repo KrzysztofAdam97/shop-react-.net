@@ -5,7 +5,7 @@ import Background from "assets/background.png";
 export const Container = styled.main`
   width: 100%;
   min-height: 600px;
-  height: 100vh;
+  height: calc(100vh - 65px);
   max-height: 1600px;
   background: url(${Background}) no-repeat;
   background-size: cover;

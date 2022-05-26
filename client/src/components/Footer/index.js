@@ -18,13 +18,13 @@ function Footer() {
     <Container>
       <Wrapper>
         <Logo src={LogoImage} alt="pcvolt logo" />
-        <Githubs>
+        {/* <Githubs>
           {GithubsList?.map((github) => (
             <MenuList as="a" key={github.id} href={github.link}>
               {github.name}
             </MenuList>
           ))}
-        </Githubs>
+        </Githubs> */}
         <Menu>
           {MenuItems?.map((item) => (
             <Link to={item.link} key={item.id}>
