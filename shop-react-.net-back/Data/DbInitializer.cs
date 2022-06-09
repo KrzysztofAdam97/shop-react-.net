@@ -9,11 +9,11 @@ namespace shop_react_.net_back.Data
 {
     public static class DbInitializer
     {
-        public static async Task Initialize(ShopContext context, UserManager<User> userManager)
+        public static async Task Initialize(ShopContext context, UserManager<user> userManager)
         {
             if (!userManager.Users.Any())
             {
-                var user = new User
+                var user = new user
                 {
                     UserName = "norek",
                     Email = "norek@gmail.com"
@@ -22,7 +22,7 @@ namespace shop_react_.net_back.Data
                 await userManager.CreateAsync(user, "Haslo#1234");
                 await userManager.AddToRoleAsync(user, "Customer");
 
-                var admin = new User
+                var admin = new user
                 {
                     UserName = "norekadmin",
                     Email = "norekadmin@gmail.com"
@@ -32,73 +32,78 @@ namespace shop_react_.net_back.Data
                 await userManager.AddToRolesAsync(admin, new[] {"Customer", "Admin"});
             }
 
-            if (context.Products.Any())
+            if (context.products.Any())
             {
                 return;   // jeśli istnieją produkty, to zwróć, inaczej wykończ kod poniżej 
             }
 
-            var products = new List<Product>
+            var products = new List<product>
             {
-                new Product
+                new product
                 {
-                    Name = "procesor intel core i7 8700k",
-                    Description = "procesor intel core i7 8th gen 4.2ghz najwyzsza jakość i najwyższy czas obliczeń blablabla",
-                    Price = 10,
-                    ImageUrl = "https://via.placeholder.com/150",
-                    Type = "nowe",
-                    Brand = "intel",
-                    Category = "procesory",
-                    InStock = 10
+                    name_product = "procesor intel core i7 8700k",
+                    description_product = "procesor intel core i7 8th gen 4.2ghz najwyzsza jakość i najwyższy czas obliczeń blablabla",
+                    price = 10,
+                    // ImageUrl = "https://via.placeholder.com/150",
+                    // Type = "nowe",
+                    // Brand = "intel",
+                    // // Category = "procesory",
+                    in_stock = 10,
+                    id_category = 2
                 },
-                new Product
+                new product
                 {
-                    Name = "procesor intel core i8 8800k",
-                    Description = "procesor intel core i8 8th gen 4.2ghz najwyzsza jakość i najwyższy czas obliczeń blablabla",
-                    Price = 20,
-                    ImageUrl = "https://via.placeholder.com/150",
-                    Type = "nowe",
-                    Brand = "intel",
-                    Category = "procesory",
-                    InStock = 20
+                    name_product = "procesor intel core i8 8800k",
+                    description_product = "procesor intel core i8 8th gen 4.2ghz najwyzsza jakość i najwyższy czas obliczeń blablabla",
+                    price = 20,
+                    // ImageUrl = "https://via.placeholder.com/150",
+                    // Type = "nowe",
+                    // Brand = "intel",
+                    // // Category = "procesory",
+                    in_stock = 20,
+                    id_category = 2
                 },
-                new Product
+                new product
                 {
-                    Name = "procesor intel core i9 8900k",
-                    Description = "procesor intel core i9 8th gen 4.2ghz najwyzsza jakość i najwyższy czas obliczeń blablabla",
-                    Price = 30,
-                    ImageUrl = "https://via.placeholder.com/150",
-                    Type = "nowe",
-                    Brand = "intel",
-                    Category = "procesory",
-                    InStock = 30
+                    name_product = "procesor intel core i9 8900k",
+                    description_product = "procesor intel core i9 8th gen 4.2ghz najwyzsza jakość i najwyższy czas obliczeń blablabla",
+                    price = 30,
+                    // ImageUrl = "https://via.placeholder.com/150",
+                    // Type = "nowe",
+                    // Brand = "intel",
+                    // // Category = "procesory",
+                    in_stock = 30,
+                    id_category = 2
                 },
-                new Product
+                new product
                 {
-                    Name = "karta graficzna radeon rx 580",
-                    Description = "karta graficzna radeon rx 580 4gb ram 256bit najwyzsza jakość i najwyższy czas obliczeń blablabla",
-                    Price = 15,
-                    ImageUrl = "https://via.placeholder.com/150",
-                    Type = "nowe",
-                    Brand = "amd",
-                    Category = "karty graficzne",
-                    InStock = 15
+                    name_product = "karta graficzna radeon rx 580",
+                    description_product = "karta graficzna radeon rx 580 4gb ram 256bit najwyzsza jakość i najwyższy czas obliczeń blablabla",
+                    price = 15,
+                    // ImageUrl = "https://via.placeholder.com/150",
+                    // Type = "nowe",
+                    // Brand = "amd",
+                    // // Category = "karty graficzne",
+                    in_stock = 15,
+                    id_category = 1
                 },
-                new Product
+                new product
                 {
-                    Name = "karta graficzna radeon rx 730",
-                    Description = "karta graficzna radeon rx 730 4gb ram 256bit najwyzsza jakość i najwyższy czas obliczeń blablabla",
-                    Price = 30,
-                    ImageUrl = "https://via.placeholder.com/150",
-                    Type = "nowe",
-                    Brand = "amd",
-                    Category = "karty graficzne",
-                    InStock = 30
+                    name_product = "karta graficzna radeon rx 730",
+                    description_product = "karta graficzna radeon rx 730 4gb ram 256bit najwyzsza jakość i najwyższy czas obliczeń blablabla",
+                    price = 30,
+                    // ImageUrl = "https://via.placeholder.com/150",
+                    // Type = "nowe",
+                    // Brand = "amd",
+                    // // Category = "karty graficzne",
+                    in_stock = 30,
+                    id_category = 1
                 },
             };
 
             foreach (var product in products)
             {
-                context.Products.Add(product);
+                context.products.Add(product);
             }
 
             context.SaveChanges();

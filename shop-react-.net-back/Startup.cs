@@ -38,9 +38,9 @@ namespace shop_react_.net_back
             });
             services.AddDbContext<ShopContext>(options =>
             {
-                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
-            services.AddIdentityCore<User>()
+            services.AddIdentityCore<user>()
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ShopContext>();
             services.AddAuthentication();
