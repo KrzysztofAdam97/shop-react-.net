@@ -13,6 +13,7 @@ namespace shop_react_.net_back.Data
         }
 
         public DbSet<product> products { get; set; }
+        public DbSet<basket> baskets { get; set; }
 
         // public DbSet<User> Users { get; set; }
         // public DbSet<Role> Roles { get; set; }

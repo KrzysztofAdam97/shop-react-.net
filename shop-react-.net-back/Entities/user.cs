@@ -16,6 +16,7 @@ namespace shop_react_.net_back.Entities
         
         // public int RoleId { get; set; }
         // public virtual Role Role { get; set; }  // RoleId - klucz obcy, Role - referencja do Role
+        
         // public int id_client { get; set; }
         // public string name_user { get; set; }
         // public string password_hash { get; set; }
