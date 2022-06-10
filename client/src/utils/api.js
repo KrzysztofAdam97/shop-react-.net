@@ -2,10 +2,11 @@ import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 
 const config = {
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://localhost:5000/api",
   timeout: 15000,
   headers: {
     "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": true,
   },
 };
 
