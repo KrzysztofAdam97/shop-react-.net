@@ -7,12 +7,10 @@ import {
   Grid,
   Product,
   ProductDetails,
-  Top,
+  Wrapper,
   Name,
   Price,
   ShortenedDescription,
-  ImageContainer,
-  Button,
 } from "components/Products/styles.js";
 
 import ClipLoader from "react-spinners/ClipLoader";
@@ -32,7 +30,7 @@ function Products() {
   useEffect(() => {
     (async () => {
       setIsLoading(true);
-      const { data } = await API.get(APIRoutes.test);
+      const { data } = await API.get(APIRoutes.products);
       setProducts(data);
       setIsLoading(false);
     })();
@@ -44,20 +42,21 @@ function Products() {
         <ClipLoader color="#ffffff" css={override} size={150} />
       ) : (
         products?.map((product) => (
-          <Product key={product.id}>
-            <ImageContainer to={`/product/${product.id}`}>
-              <img src={product.imageUrl} alt="" />
-            </ImageContainer>
-            <ProductDetails>
-              <Top>
-                <Link to={`/product/${product.id}`}>
-                  <Name>{product.name}</Name>
-                </Link>
-                <Price>{product.price} PLN</Price>
-              </Top>
-              <ShortenedDescription>{product.description}</ShortenedDescription>
-              <Button>Dodaj do koszyka</Button>
-            </ProductDetails>
+          <Product key={product.id_product}>
+            <Link to={`/product/${product.id_product}`}>
+              <ProductDetails>
+                <Wrapper>
+                  <Name>{product.name_product}</Name>
+                </Wrapper>
+                <ShortenedDescription>
+                  {product.description_product}
+                </ShortenedDescription>
+                <Wrapper>
+                  <Price>{product.price} PLN</Price>
+                  <Price>{product.in_stock} w magazynie</Price>
+                </Wrapper>
+              </ProductDetails>
+            </Link>
           </Product>
         ))
       )}
