@@ -2,7 +2,7 @@ import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 
 const config = {
-  baseURL: "http://localhost:8080",
+  baseURL: "http://localhost:5000/api",
   timeout: 15000,
   headers: {
     "Content-Type": "application/json",
@@ -12,7 +12,10 @@ const config = {
 export const API = axios.create(config);
 
 export const APIRoutes = {
+  testProduct: (id) => `/testProduct/${id}`,
   test: "/test",
+  products: "/Products",
+  product: (id) => `/Product/${id}`,
 };
 
 export const APIMock = new MockAdapter(API, {
@@ -20,29 +23,141 @@ export const APIMock = new MockAdapter(API, {
   onNoMatch: "passthrough",
 });
 
+APIMock.onGet(APIRoutes.testProduct(2)).reply(200, {
+  id_product: 1,
+  name_product: "Intel core i3 9350K",
+  description_product:
+    "Procesor marki intel 9 generacji, taktowanie do 4,20GHz, 8 MB Cache",
+  price: 1400,
+  in_stock: 4,
+  id_category: 1,
+});
+
 APIMock.onGet(APIRoutes.test).reply(200, [
   {
-    id: 1,
-    name: "Testowy przedmiot",
-    description:
-      "Cras dapibus vel massa non dignissim. Pellentesque posuere porta enim, sit amet tristique sapien faucibus cursus. Fusce tempor ligula nec neque pulvinar ultrices. Nullam ullamcorper sit amet sem a venenatis. Ut id metus facilisis, suscipit tortor non, blandit augue. Nulla ullamcorper sapien sit amet enim bibendum aliquet. Maecenas pulvinar sed dolor a volutpat.",
-    price: 100,
-    imageUrl: "https://via.placeholder.com/200/09f/fff.png",
-    type: "graphic_card",
-    brand: "MSI",
-    category: "gaming",
-    stock: 3,
+    id_product: 1,
+    name_product: "Intel core i3 9350K",
+    description_product:
+      "Procesor marki intel 9 generacji, taktowanie do 4,20GHz, 8 MB Cache",
+    price: 1400,
+    in_stock: 4,
+    id_category: 1,
   },
   {
-    id: 2,
-    name: "Testowy przedmiot 2",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar feugiat convallis. Fusce sed lorem ullamcorper, ultricies velit a, mattis purus. Sed eu urna ac diam imperdiet hendrerit a at sapien. Cras metus ipsum, congue et lectus sed, egestas consequat mauris. Phasellus laoreet malesuada auctor. Vestibulum dictum enim sem, vel aliquam nisl placerat eget. Suspendisse arcu purus, blandit vel imperdiet sed, ultrices eget leo. Sed lobortis felis eu arcu lacinia, id fringilla mauris egestas. Mauris lacinia augue sit amet porta tempor.",
-    price: 159,
-    imageUrl: "https://via.placeholder.com/200/d4f/fff.png",
-    type: "graphic_card",
-    brand: "MSI",
-    category: "gaming",
-    stock: 3,
+    id_product: 2,
+    name_product: "Intel core i5 11250F",
+    description_product:
+      "Procesor marki intel 5 generacji, taktowanie do 4,60GHz, 8 MB Cache",
+    price: 1500,
+    in_stock: 6,
+    id_category: 1,
+  },
+  {
+    id_product: 3,
+    name_product: "Intel core i5 11250F",
+    description_product:
+      "Procesor marki intel 5 generacji, taktowanie do 4,60GHz, 8 MB Cache",
+    price: 1500,
+    in_stock: 6,
+    id_category: 1,
+  },
+  {
+    id_product: 4,
+    name_product: "Intel core i5 11250F",
+    description_product:
+      "Procesor marki intel 5 generacji, taktowanie do 4,60GHz, 8 MB Cache",
+    price: 1500,
+    in_stock: 6,
+    id_category: 1,
+  },
+  {
+    id_product: 5,
+    name_product: "Intel core i5 11250F",
+    description_product:
+      "Procesor marki intel 5 generacji, taktowanie do 4,60GHz, 8 MB Cache",
+    price: 1500,
+    in_stock: 6,
+    id_category: 1,
+  },
+  {
+    id_product: 5,
+    name_product: "Intel core i5 11250F",
+    description_product:
+      "Procesor marki intel 5 generacji, taktowanie do 4,60GHz, 8 MB Cache",
+    price: 1500,
+    in_stock: 6,
+    id_category: 1,
+  },
+  {
+    id_product: 5,
+    name_product: "Intel core i5 11250F",
+    description_product:
+      "Procesor marki intel 5 generacji, taktowanie do 4,60GHz, 8 MB Cache",
+    price: 1500,
+    in_stock: 6,
+    id_category: 1,
+  },
+  {
+    id_product: 5,
+    name_product: "Intel core i5 11250F",
+    description_product:
+      "Procesor marki intel 5 generacji, taktowanie do 4,60GHz, 8 MB Cache",
+    price: 1500,
+    in_stock: 6,
+    id_category: 1,
+  },
+  {
+    id_product: 5,
+    name_product: "Intel core i5 11250F",
+    description_product:
+      "Procesor marki intel 5 generacji, taktowanie do 4,60GHz, 8 MB Cache",
+    price: 1500,
+    in_stock: 6,
+    id_category: 1,
+  },
+  {
+    id_product: 5,
+    name_product: "Intel core i5 11250F",
+    description_product:
+      "Procesor marki intel 5 generacji, taktowanie do 4,60GHz, 8 MB Cache",
+    price: 1500,
+    in_stock: 6,
+    id_category: 1,
+  },
+  {
+    id_product: 5,
+    name_product: "Intel core i5 11250F",
+    description_product:
+      "Procesor marki intel 5 generacji, taktowanie do 4,60GHz, 8 MB Cache",
+    price: 1500,
+    in_stock: 6,
+    id_category: 1,
+  },
+  {
+    id_product: 5,
+    name_product: "Intel core i5 11250F",
+    description_product:
+      "Procesor marki intel 5 generacji, taktowanie do 4,60GHz, 8 MB Cache",
+    price: 1500,
+    in_stock: 6,
+    id_category: 1,
+  },
+  {
+    id_product: 5,
+    name_product: "Intel core i5 11250F",
+    description_product:
+      "Procesor marki intel 5 generacji, taktowanie do 4,60GHz, 8 MB Cache",
+    price: 1500,
+    in_stock: 6,
+    id_category: 1,
+  },
+  {
+    id_product: 5,
+    name_product: "Intel core i5 11250F",
+    description_product:
+      "Procesor marki intel 5 generacji, taktowanie do 4,60GHz, 8 MB Cache",
+    price: 1500,
+    in_stock: 6,
+    id_category: 1,
   },
 ]);

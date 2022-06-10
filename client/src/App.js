@@ -13,6 +13,7 @@ import {
   Checkout,
   SignIn,
   SignUp,
+  SingleProduct,
 } from "components";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path="/koszyk" element={<Checkout />} />
             <Route path="/logowanie" element={<SignIn />} />
             <Route path="/rejestracja" element={<SignUp />} />
+            <Route path="/product/:id" element={<SingleProduct />} />
           </Routes>
         </Layout>
         <Footer />

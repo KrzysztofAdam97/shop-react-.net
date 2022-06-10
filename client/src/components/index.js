@@ -5,3 +5,4 @@ export { default as Products } from "components/Products";
 export { default as Checkout } from "components/Checkout";
 export { default as SignIn } from "components/SignIn";
 export { default as SignUp } from "components/SignUp";
+export { default as SingleProduct } from "components/SingleProduct";
