@@ -9,11 +9,11 @@ namespace shop_react_.net_back.Data
 {
     public static class DbInitializer
     {
-        public static async Task Initialize(ShopContext context, UserManager<user> userManager)
+        public static async Task Initialize(ShopContext context, UserManager<User> userManager)
         {
             if (!userManager.Users.Any())
             {
-                var user = new user
+                var user = new User
                 {
                     UserName = "norek",
                     Email = "norek@gmail.com"
@@ -22,7 +22,7 @@ namespace shop_react_.net_back.Data
                 await userManager.CreateAsync(user, "Haslo#1234");
                 await userManager.AddToRoleAsync(user, "Customer");
 
-                var admin = new user
+                var admin = new User
                 {
                     UserName = "norekadmin",
                     Email = "norekadmin@gmail.com"

@@ -10,14 +10,14 @@ namespace shop_react_.net_back.Controllers
 {
     public class AccountController : BaseApiController
     {
-        private readonly UserManager<user> _userManager;
-        public AccountController(UserManager<user> userManager)
+        private readonly UserManager<User> _userManager;
+        public AccountController(UserManager<User> userManager)
         {
             _userManager = userManager;
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<user>> Login(LoginDto loginDto)
+        public async Task<ActionResult<User>> Login(LoginDto loginDto)
         {
             var user = await _userManager.FindByNameAsync(loginDto.UserName);
             if (user == null || !await _userManager.CheckPasswordAsync(user, loginDto.Password))
@@ -42,7 +42,7 @@ namespace shop_react_.net_back.Controllers
         // nie będziemy zwracać Usera w tej metodzie, dlatego nie uzyjemy Task<ActionResult<User>>
         // po zarejestrowaniu poprosimy ich po prostu o zalogowanie się, nie będziemy automatycznie ich logować po rejestracji
         {
-            var user = new user
+            var user = new User
             {
                 UserName = registerDto.UserName,
                 // FirstName = registerDto.FirstName,      // SPRAWDZENIE CZY JEST TO POTRZEBNE

@@ -40,7 +40,7 @@ namespace shop_react_.net_back
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
-            services.AddIdentityCore<user>()
+            services.AddIdentityCore<User>()
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ShopContext>();
             services.AddAuthentication();

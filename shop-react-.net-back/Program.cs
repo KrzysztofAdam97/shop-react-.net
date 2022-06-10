@@ -21,7 +21,7 @@ namespace shop_react_.net_back
             var host = CreateHostBuilder(args).Build();
             using var scope = host.Services.CreateScope();
             var context = scope.ServiceProvider.GetRequiredService<ShopContext>();
-            var userManager = scope.ServiceProvider.GetRequiredService<UserManager<user>>();
+            var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
             var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
             try
             {

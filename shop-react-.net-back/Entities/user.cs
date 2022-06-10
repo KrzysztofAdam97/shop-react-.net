@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace shop_react_.net_back.Entities
 {
-    public class user : IdentityUser     // będziemy używać IdentityUser, aby mieć dostęp do wszystkich propertisów
+    public class User : IdentityUser     // będziemy używać IdentityUser, aby mieć dostęp do wszystkich propertisów
     {
         // public int Id { get; set; }
         // public string UserName { get; set; }
