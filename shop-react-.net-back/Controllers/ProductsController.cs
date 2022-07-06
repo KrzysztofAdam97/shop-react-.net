@@ -29,6 +29,7 @@ namespace shop_react_.net_back.Controllers
         {
             return await _context.products.FindAsync(id);
         }
+        
 
     }
 }

@@ -6,7 +6,7 @@ const config = {
   timeout: 15000,
   headers: {
     "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": true,
+    "Access-Control-Allow-Origin": true, // CORS musi być w response, a nie w request
   },
 };
 
